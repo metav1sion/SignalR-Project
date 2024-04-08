@@ -1,5 +1,15 @@
+using SignalR.BusinessLayer.Abstract;
+using SignalR.BusinessLayer.Concrete;
+using SignalR.DataAccessLayer.Abstract;
+using SignalR.DataAccessLayer.Concrete;
+using SignalR.DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<SignalRContext>();
+
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
 // Add services to the container.
 
 builder.Services.AddControllers();
