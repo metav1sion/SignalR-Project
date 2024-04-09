@@ -42,5 +42,10 @@ namespace SignalR.BusinessLayer.Concrete
         {
             return _dal.GetAll();
         }
+
+        public List<Product> TGetProductsWithCategories()
+        {
+            return _dal.GetProductsWithCategories();
+        }
     }
 }
