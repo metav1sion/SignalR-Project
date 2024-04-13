@@ -1,0 +1,46 @@
+﻿@model SignalRWebUI.Dtos.AboutDtos.ResultAboutDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Hakkımda İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Hakkımda Yazısı Güncelleme</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                @Html.HiddenFor(x=>x.AboutID)
+
+                                <label>Başlık</label>
+                                <input type="text" asp-for="Title" class="form-control">
+                                <br />
+                                <label>Güncel Görsel</label>
+                                <br/>
+                                <img width="300" height="200" src="@Model.ImageUrl"/>
+                                <br/>
+                                <br/>
+                                <label>Görsel URL'si</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control">
+                                <br/>
+                                <label>Yazı</label>
+                                @Html.TextAreaFor(x=>x.Description, new {@class="form-control"})
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Yazıyı Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

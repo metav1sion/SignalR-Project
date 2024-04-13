@@ -1,4 +1,4 @@
-﻿@model List<SignalRWebUI.Dtos.ProductDtos.ResultProductDto>
+﻿@model List<SignalRWebUI.Dtos.BookingDtos.ResultBookingDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -7,25 +7,26 @@
 
 <div class="content">
     <div class="container-fluid">
-        <h4 class="page-title">Ürün İşlemleri</h4>
+        <h4 class="page-title">Rezervasyon İşlemleri</h4>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Ürün Listesi</div>
+                        <div class="card-title">Rezervasyon Listesi</div>
                     </div>
                     <div class="card-body">
                         <div class="card-sub">
-                            Ürün ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz.
+                            Rezervasyon ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz.
                         </div>
                         <table class="table mt-3">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Ürün Adı</th>
-                                    <th scope="col">Ürün Fiyatı</th>
-                                    <th scope="col">Ürün Kategorisi</th>
-                                    <th scope="col">Durum</th>
+                                    <th scope="col">Müşteri Adı</th>
+                                    <th scope="col">Misafir Sayısı</th>
+                                    <th scope="col">Telefon Numarası</th>
+                                    <th scope="col">Mail Adresi</th>
+                                    <th scope="col">Rezervasyon Tarihi</th>
                                     <th scope="col">Sil</th>
                                     <th scope="col">Güncelle</th>
                                 </tr>
@@ -35,23 +36,23 @@
                                 {
                                     <tr>
                                         <td>@counter</td>
-                                        <td>@item.ProductName</td>
-                                        <td>@item.Price ₺</td>
-                                        <td>@item.CategoryName</td>
-                                        <td>@item.ProductStatus</td>
-                                        <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
-                                        <td><a href="/Product/UpdateProduct/@item.ProductID" class="btn btn-outline-success">Güncelle</a></td>
+                                        <td>@item.Name</td>
+                                        <td>@item.PersonCount</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.Mail</td>
+                                        <td>@item.Date</td>
+                                        <td><a href="/Booking/DeleteBooking/@item.BookingID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Booking/UpdateBooking/@item.BookingID" class="btn btn-outline-success">Güncelle</a></td>
                                     </tr>
                                     counter++;
                                 }
                             </tbody>
                         </table>
-                        <a href="/Product/CreateProduct" class="btn btn-outline-primary">Yeni Ürün Girişi</a>
+                        <a href="/Booking/CreateBooking" class="btn btn-outline-primary">Yeni Kategori Girişi</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 

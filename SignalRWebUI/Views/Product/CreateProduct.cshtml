@@ -1,0 +1,50 @@
+﻿@model SignalRWebUI.Dtos.ProductDtos.CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Ürün İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Ürün Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Ürün Adını Giriniz</label>
+                                <input type="text" asp-for="ProductName" class="form-control">
+                                <br/>
+                                <label>Ürün Açıklaması Giriniz</label>
+                                <textarea asp-for="Description" class="form-control" rows="4" cols="50"></textarea>
+                                <br/>
+                                <label>Ürün Fiyatı Giriniz</label>
+                                <input type="text" asp-for="Price" class="form-control">
+                                <br/>
+                                <label>Ürün Görsel URL'si Giriniz</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control">
+                                <br/>
+                                <label>Ürün Durumunu Seçiniz</label>
+                                <select asp-for="ProductStatus" class="form-control">
+                                    <option value="true">Gözüksün</option>
+                                    <option value="false">Gözükmesin</option>
+                                </select>
+                                <br/>
+                                <label>Ürün Kategorisi Seçiniz</label>
+                                @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v,"Ürün Kategorisini Seçiniz",new {@class = "form-control"})
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Ürün Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

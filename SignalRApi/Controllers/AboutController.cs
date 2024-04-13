@@ -59,7 +59,7 @@ namespace SignalRApi.Controllers
             return Ok("Hakkımda Alanı Güncellendi");
         }
 
-        [HttpGet("GetAbout")]
+        [HttpGet("GetAbout/{id}")]
         public IActionResult GetAbout(int id)
         {
             var value = _aboutService.TGetByID(id);

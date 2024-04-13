@@ -1,0 +1,54 @@
+﻿@model SignalRWebUI.Dtos.ProductDtos.UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Kategori İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Kategori Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="categoryname">Kategori ID</label>
+                                <input type="text" asp-for="ProductID" class="form-control" readonly="readonly">
+                                <br/>
+                                <label for="categoryname">Ürün Adı</label>
+                                <input type="text" asp-for="ProductName" class="form-control">
+                                <br />
+                                <label>Ürün Açıklaması</label>
+                                <textarea asp-for="Description" class="form-control" rows="4" cols="50"></textarea>
+                                <br />
+                                <label>Ürün Fiyatı</label>
+                                <input type="text" asp-for="Price" class="form-control">
+                                <br />
+                                <label>Ürün Görsel URL'si</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control">
+                                <br />
+                                <label for="categoryname">Kategori Statü</label>
+                                <select asp-for="ProductStatus" class="form-control">
+                                    <option value="true">Gözüksün</option>
+                                    <option value="false">Gözükmesin</option>
+                                </select>
+                                <br />
+                                <label>Ürün Kategorisi</label>
+                                @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Kategoriyi Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
