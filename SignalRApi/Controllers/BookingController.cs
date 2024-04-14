@@ -33,6 +33,7 @@ namespace SignalRApi.Controllers
                 Date = p.Date,
                 Name = p.Name,
                 PersonCount = p.PersonCount,
+                Status = p.Status,
                 Phone = p.Phone
             };
             _bookingService.TAdd(booking);
@@ -58,13 +59,14 @@ namespace SignalRApi.Controllers
                 Name = p.Name,
                 PersonCount = p.PersonCount,
                 Phone = p.Phone,
+                Status = p.Status,
                 Date = p.Date
             };
             _bookingService.TUpdate(booking);
             return Ok("Rezervasyon Güncellendi");
         }
 
-        [HttpGet("GetBooking")]
+        [HttpGet("GetBooking/{id}")]
         public IActionResult GetBooking(int id)
         {
             var value = _bookingService.TGetByID(id);

@@ -1,0 +1,46 @@
+﻿@model SignalRWebUI.Dtos.BookingDtos.CreateBookingDto
+@{
+    ViewData["Title"] = "CreateBooking";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Rezervasyon İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Rezervasyon Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="categoryname">Müşteri Adını Giriniz</label>
+                                <input type="text" asp-for="Name" class="form-control" id="categoryname">
+                                <br/>
+                                <label for="categoryname">Müşteri Telefon Numarasını Giriniz</label>
+                                <input type="text" asp-for="Phone" class="form-control" id="categoryname">
+                                <br/>
+                                <label for="categoryname">Müşteri Mail Adresini Giriniz</label>
+                                <input type="text" asp-for="Mail" class="form-control" id="categoryname">
+                                <br/>
+                                <label for="categoryname">Misafir Sayısını Giriniz</label>
+                                <input type="text" asp-for="PersonCount" class="form-control" id="categoryname">
+                                <br />
+                                <label for="categoryname">Tarih Seçiniz</label>
+                                <input type="datetime-local" asp-for="Date" class="form-control" id="categoryname">
+                                <br />
+
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Rezervasyon Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

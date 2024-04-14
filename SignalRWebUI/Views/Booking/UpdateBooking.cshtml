@@ -1,0 +1,55 @@
+﻿@model SignalRWebUI.Dtos.BookingDtos.UpdateBookingDto
+@{
+    ViewData["Title"] = "UpdateBooking";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Rezervasyon İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Rezervasyon Güncelleme</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="categoryname">Rezervasyon ID</label>
+                                <input type="text" asp-for="BookingID" class="form-control" readonly="readonly">
+
+                                <label for="categoryname">Müşteri Adı</label>
+                                <input type="text" asp-for="Name" class="form-control">
+                                
+                                <label for="categoryname">Müşteri Telefon Numarası</label>
+                                <input type="text" asp-for="Phone" class="form-control">
+                                
+                                <label for="categoryname">Müşteri Mail Adresi</label>
+                                <input type="text" asp-for="Mail" class="form-control">
+                                
+                                <label for="categoryname">Misafir Sayısı</label>
+                                <input type="number" asp-for="PersonCount" class="form-control">
+                                
+                                <label for="categoryname">Rezervasyon Tarihi</label>
+                                <input type="datetime" asp-for="Date" class="form-control" value="@Model.Date.ToString("g")">
+
+                                <label for="categoryname">Rezervasyon Durumu</label>
+                                <select asp-for="Status" class="form-control">
+                                    <option value="0">Beklemede</option>
+                                    <option value="1">İptal Et</option>
+                                    <option value="2">Kabul Et</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Rezervasyonu Güncelle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

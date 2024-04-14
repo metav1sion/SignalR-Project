@@ -49,7 +49,7 @@ namespace SignalRApi.Controllers
             return Ok("İletişim Bilgisi Silindi");
         }
 
-        [HttpGet("GetContact")]
+        [HttpGet("GetContact/{id}")]
         public IActionResult GetContact(int id)
         {
             var value = _contactService.TGetByID(id);
