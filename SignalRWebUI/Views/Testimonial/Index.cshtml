@@ -1,4 +1,4 @@
-﻿@model List<SignalRWebUI.Dtos.DiscountDtos.ResultDiscountDto>
+﻿@model List<SignalRWebUI.Dtos.TestimonialDtos.ResultTestimonialDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -7,24 +7,25 @@
 
 <div class="content">
     <div class="container-fluid">
-        <h4 class="page-title">İndirim İşlemleri</h4>
+        <h4 class="page-title">Referans İşlemleri</h4>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">İndirim Listesi</div>
+                        <div class="card-title">Referans Listesi</div>
                     </div>
                     <div class="card-body">
                         <div class="card-sub">
-                            İndirim ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz.
+                            Referans ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz.
                         </div>
                         <table class="table mt-3">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Başlık</th>
-                                    <th scope="col">Değer</th>
-                                    <th scope="col">Açıklama</th>
+                                    <th scope="col">Referans İsim</th>
+                                    <th scope="col">Referans Ünvan</th>
+                                    <th scope="col">Referans Görsel</th>
+                                    <th scope="col">Durumu</th>
                                     <th scope="col">Sil</th>
                                     <th scope="col">Güncelle</th>
                                 </tr>
@@ -35,17 +36,18 @@
 
                                     <tr>
                                         <td>@counter</td>
+                                        <td>@item.Name</td>
                                         <td>@item.Title</td>
-                                        <td>@item.Amount</td>
-                                        <td>@item.Description</td>
-                                        <td><a href="/Discount/DeleteDiscount/@item.DiscountID" class="btn btn-outline-danger">Sil</a></td>
-                                        <td><a href="/Discount/UpdateDiscount/@item.DiscountID" class="btn btn-outline-success">Güncelle</a></td>
+                                        <td><img src="@item.ImageUrl" style="height:100px; width:100px;" /></td>
+                                        <td>@item.Status</td>
+                                        <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-outline-success">Güncelle</a></td>
                                     </tr>
                                     counter++;
                                 }
                             </tbody>
                         </table>
-                        <a href="/Discount/CreateDiscount" class="btn btn-outline-primary">Yeni İndirim Girişi</a>
+                        <a href="/Testimonial/CreateTestimonial" class="btn btn-outline-primary">Yeni Referans Girişi</a>
                     </div>
                 </div>
             </div>

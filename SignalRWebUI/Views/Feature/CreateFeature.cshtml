@@ -1,0 +1,47 @@
+﻿@model SignalRWebUI.Dtos.FeatureDtos.CreateFeatureDto
+@{
+    ViewData["Title"] = "CreateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Öne Çıkan Alan İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Öne Çıkan Alan Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="categoryname">Başlık 1</label>
+                                <input type="text" asp-for="Title1" class="form-control" id="categoryname">
+                                <br />
+                                <label for="categoryname">Başlık 2</label>
+                                <input type="text" asp-for="Title2" class="form-control" id="categoryname">
+                                <br />
+                                <label for="categoryname">Başlık 3</label>
+                                <input type="text" asp-for="Title3" class="form-control" id="categoryname">
+                                <br />
+                                <label for="categoryname">Açıklama 1</label>
+                                <input type="text" asp-for="Description1" class="form-control" id="categoryname">
+                                <br />
+                                <label for="categoryname">Açıklama 2</label>
+                                <input type="text" asp-for="Description2" class="form-control" id="categoryname">
+                                <br />
+                                <label for="categoryname">Açıklama 3</label>
+                                <input type="text" asp-for="Description3" class="form-control" id="categoryname">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Öne Çıkan Alan Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

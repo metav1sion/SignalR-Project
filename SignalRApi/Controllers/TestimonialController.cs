@@ -42,7 +42,7 @@ namespace SignalRApi.Controllers
             return Ok("Referans Bilgisi Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteTestimonial(int id)
         {
             var value = _testimonialService.TGetByID(id);
@@ -50,7 +50,7 @@ namespace SignalRApi.Controllers
             return Ok("Referans Bilgisi Silindi");
         }
 
-        [HttpGet("GetTestimonial")]
+        [HttpGet("{id}")]
         public IActionResult GetTestimonial(int id)
         {
             var value = _testimonialService.TGetByID(id);
@@ -66,7 +66,7 @@ namespace SignalRApi.Controllers
                 Name = p.Name,
                 Comment = p.Comment,
                 ImageUrl = p.ImageUrl,
-                Status = true,
+                Status = p.Status,
                 Title = p.Title
             });
             return Ok("Güncelleme İşlemi Gerçekleşti");

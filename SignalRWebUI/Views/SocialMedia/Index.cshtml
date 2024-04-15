@@ -1,4 +1,4 @@
-﻿@model List<SignalRWebUI.Dtos.DiscountDtos.ResultDiscountDto>
+﻿@model List<SignalRWebUI.Dtos.SocialMediaDtos.ResultSocialMediaDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -7,24 +7,23 @@
 
 <div class="content">
     <div class="container-fluid">
-        <h4 class="page-title">İndirim İşlemleri</h4>
+        <h4 class="page-title">Sosyal Medya İşlemleri</h4>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">İndirim Listesi</div>
+                        <div class="card-title">Sosyal Medya Listesi</div>
                     </div>
                     <div class="card-body">
                         <div class="card-sub">
-                            İndirim ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz.
+                            Sosyal Medya ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz.
                         </div>
                         <table class="table mt-3">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Başlık</th>
-                                    <th scope="col">Değer</th>
-                                    <th scope="col">Açıklama</th>
+                                    <th scope="col">İkon</th>
                                     <th scope="col">Sil</th>
                                     <th scope="col">Güncelle</th>
                                 </tr>
@@ -36,16 +35,15 @@
                                     <tr>
                                         <td>@counter</td>
                                         <td>@item.Title</td>
-                                        <td>@item.Amount</td>
-                                        <td>@item.Description</td>
-                                        <td><a href="/Discount/DeleteDiscount/@item.DiscountID" class="btn btn-outline-danger">Sil</a></td>
-                                        <td><a href="/Discount/UpdateDiscount/@item.DiscountID" class="btn btn-outline-success">Güncelle</a></td>
+                                        <td><i style="font-size:40px;" class="@item.Icon"></i></td>
+                                        <td><a  href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-outline-success">Güncelle</a></td>
                                     </tr>
                                     counter++;
                                 }
                             </tbody>
                         </table>
-                        <a href="/Discount/CreateDiscount" class="btn btn-outline-primary">Yeni İndirim Girişi</a>
+                        <a href="/SocialMedia/CreateSocialMedia" class="btn btn-outline-primary">Yeni Sosyal Medya Girişi</a>
                     </div>
                 </div>
             </div>
